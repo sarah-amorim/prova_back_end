@@ -19,18 +19,26 @@ from django.urls import path
 from my_app.views import *
 
 urlpatterns = [
+    # Rota para interface administrativa do Django
     path('admin/', admin.site.urls),
-    path('projetos/form/', form_projetos, name='get_projeto_form'),
-    path('projetos/listar/', listar_projetos, name='listar_projetos'),
-    path('projetos/cadastrar/', cadastrar_projeto, name='cadastrar_projeto'),
-    path('projetos/inativar/', inativar_projeto, name='inativar_projeto'),
-    path('projetos/editar/', editar_projeto, name='editar_projeto'),
-    path('projetos/visualizar/', visualizar_projeto, name='visualizar_projeto'),
-    path('projetos/equipe/', equipe_projeto, name='equipe_projeto'),
-    path('projetos/equipe/atualizar/', atualizar_equipe, name='atualizar_equipe'),
-    path('colaboradores/listar/', listar_colaboradores, name='listar_colaboradores'),
-    path('colaboradores/cadastrar/', cadastrar_colaboradores, name='cadastrar_colaborador'),
-    path('colaboradores/visualizar/', visualizar_colaboradores, name='visualizar_colaborador'),
-    path('colaboradores/editar/', editar_colaboradores, name='editar_colaboradores')
 
+    # Rotas relacionadas aos projetos
+    path('projetos/form/', form_projetos, name='get_projeto_form'),  # Obter formulário para projetos
+    path('projetos/listar/', listar_projetos, name='listar_projetos'),  # Listar todos os projetos
+    path('projetos/cadastrar/', cadastrar_projeto, name='cadastrar_projeto'),  # Cadastrar novo projeto
+    path('projetos/inativar/', inativar_projeto, name='inativar_projeto'),  # Inativar um projeto existente
+    path('projetos/editar/', editar_projeto, name='editar_projeto'),  # Editar informações de um projeto
+    path('projetos/visualizar/', visualizar_projeto, name='visualizar_projeto'),  # Visualizar detalhes de um projeto
+    path('projetos/equipe/', equipe_projeto, name='equipe_projeto'),  # Ver equipe associada a um projeto
+    path('projetos/equipe/atualizar/', atualizar_equipe, name='atualizar_equipe'),
+    # Atualizar informações da equipe do projeto
+
+    # Rotas relacionadas aos colaboradores
+    path('colaboradores/listar/', listar_colaboradores, name='listar_colaboradores'),  # Listar todos os colaboradores
+    path('colaboradores/cadastrar/', cadastrar_colaboradores, name='cadastrar_colaborador'),
+    # Cadastrar novo colaborador
+    path('colaboradores/visualizar/', visualizar_colaboradores, name='visualizar_colaborador'),
+    # Ver detalhes de um colaborador
+    path('colaboradores/editar/', editar_colaboradores, name='editar_colaboradores')
+    # Editar informações de um colaborador
 ]
